@@ -1,8 +1,8 @@
 ﻿var _viewer;
 var _thumbs;
 var _scanPage = 1;
-var _serverUrl = 'WebViewingDemoResources/WebDocumentViewerHandler.ashx';
-var _docUrl = '~/WebViewingDemoResources/WDV-Startup-Doc.tif';
+var _serverUrl = 'Handlers/WebDocumentViewerHandler.ashx';
+var _docUrl = '~/WebViewingDemoResources/startup.pdf';
 var _savePath = '~/WebViewingDemoResources/Saved/';
 var _thumbsShowing = true;
 
@@ -26,8 +26,6 @@ $(function() {
 
         AddFileToolbar();
 
-        MakeSessionCopyOfDocument();
-
     } //End Try
     catch (error) {
         console.log(error);
@@ -41,7 +39,7 @@ function InitializeViewers() {
         toolbarparent: $('.atala-document-toolbar'),
         serverurl: _serverUrl,
         //documenturl: _docUrl,
-        savepath: _savePath,
+        //savepath: _savePath,
         allowannotations: true,
         showbuttontext: false
     });
@@ -51,6 +49,7 @@ function InitializeViewers() {
         serverurl: _serverUrl, // server handler url to send image requests to
         documenturl: _docUrl, // + _docFile, 	// document url relative to the server handler url
         allowannotations: true,
+        allowdragdrop: true,
         viewer: _viewer
     });
 
@@ -67,7 +66,8 @@ function InitializeViewers() {
 
     function onError(e) {
         _testing = e.message;
-        alert('Error: ' + e.name + '\n' + e.message);
+        if (e.name != 'ResumePageRequestsError')
+            alert('Error: ' + e.name + '\n' + e.message);
     }
 
     function onDocumentSaved(e) {
@@ -222,7 +222,7 @@ function AddFileToolbar() {
     var toolbar = $('<div />');
     toolbar.addClass('UploadToolbar');
     toolbar.append(AddFileUploadButton());
-    toolbar.append(AddFileSaveButton());
+    //toolbar.append(AddFileSaveButton());
 
     $('.atala-document-toolbar').prepend(toolbar);
 }
@@ -284,7 +284,7 @@ function ajaxFileUpload() {
     ShowLoadingGif(gif);
 
     $.ajaxFileUpload({
-        url: 'WebViewingDemoResources/UploadHandler.ashx',
+        url: 'Handlers/UploadHandler.ashx',
         secureuri: false,
         fileElementId: 'FileToUpload',
         dataType: 'json',
@@ -354,7 +354,7 @@ function SaveFile(){
 
     _viewer.save(null, function () {
         //window.location.replace('WebViewingDemoResources/ProcessingHandler.svc/MakePrintPdf?document=' + _docUrl + '&annotationFolder=' + _savePath); //Use this if running under IIS.
-        window.open('WebViewingDemoResources/ProcessingHandler.svc/MakePrintPdf?document=' + _docUrl + '&annotationFolder=' + _savePath); //And this if running under Visual Studio/Cassini.
+        window.open('Handlers/ProcessingHandler.svc/MakePrintPdf?document=' + _docUrl + '&annotationFolder=' + _savePath); //And this if running under Visual Studio/Cassini.
       
 //        var request = $.ajax({
 //            url: 'WebViewingDemoResources/ProcessingHandler.svc/MakePrintPdf',
@@ -377,27 +377,6 @@ function SaveFile(){
     });
 		
 		return false;
-}
-
-function MakeSessionCopyOfDocument() {
-
-    var request = $.ajax({
-        url: 'WebViewingDemoResources/ProcessingHandler.svc/InitializeDocument',
-        data: {
-            document: _docUrl
-        },
-        cache: false,
-        dataType: 'json',
-        success: function (data, status) {
-            if (data.success != 'true') {
-                alert(data.error);
-            }
-            else {
-                _docUrl = data.file;
-                _thumbs.openUrl(_docUrl);
-            }
-        }
-    });
 }
 
 function AppendStatus(error){
