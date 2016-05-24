@@ -1,0 +1,39 @@
+﻿@import url('jquery-ui-1.8.14.custom.css');
+
+.atala-document-container { border: 1px solid #DDDDDD;  }
+.atala-document-toolbar { border: 1px solid #DDDDDD; background-color: #DDDDDD; }
+     
+.atala-ui { font-size: 0.8em; }
+.atala-ui-button { font-size: 0.8em; margin-left:1px; }
+
+.atala-ui-icon { width: 16px; height: 16px; background-image: url('images/atala-ui-icons-16.png'); }
+.ui-state-default .atala-ui-icon { background-image: url('images/atala-ui-icons-16.png'); }
+        
+.atala-ui-icon-page-prev { background-position: 0 0; }
+.atala-ui-icon-page-next { background-position: -16px 0; }
+.atala-ui-icon-zoom-out { background-position: -32px 0; }
+.atala-ui-icon-zoom-in { background-position: -48px 0; }
+.atala-ui-icon-zoom-full { background-position: -64px 0; }
+.atala-ui-icon-fit-best { background-position: -80px 0; }
+.atala-ui-icon-fit-width { background-position: -96px 0; }
+
+.atala-ui-icon-save { background-position: -112px 0; }
+
+.atala-ui-icon-ellipse { background-position: -128px 0; } 
+.atala-ui-icon-highlight { background-position: -144px 0; }
+.atala-ui-icon-line { background-position: -160px 0; }
+.atala-ui-icon-lines { background-position: -176px 0; }
+.atala-ui-icon-freehand { background-position: -192px 0; }
+.atala-ui-icon-polygon { background-position: -208px 0; }
+.atala-ui-icon-rectangle { background-position: -224px 0; }
+.atala-ui-icon-fillrect { background-position: -240px 0; }
+.atala-ui-icon-stamp { background-position: -256px 0; }
+.atala-ui-icon-image { background-position: -256px 0; }
+.atala-ui-icon-note { background-position: -272px 0; }
+.atala-ui-icon-text { background-position: -288px 0; }
+.atala-ui-icon-comment { background-position: -304px 0; }
+.atala-ui-icon-rotate-left { background-position: -320px 0; }
+.atala-ui-icon-rotate-right { background-position: -336px 0; }
+
+.atala-ui-form-highlight { background-color: rgb(204, 215, 255) !important; background-color: rgba(204, 215, 255, .7) !important }
+.atala-ui-form-required { border: 3px solid red !important }

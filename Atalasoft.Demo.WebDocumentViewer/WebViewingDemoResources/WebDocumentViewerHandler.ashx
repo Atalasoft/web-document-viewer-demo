@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="WebDocumentViewerHandler.ashx.cs" Class="WebDocumentViewerHandler" %>
