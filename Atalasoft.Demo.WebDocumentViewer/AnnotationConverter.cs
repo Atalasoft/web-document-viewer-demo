@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using Atalasoft.Annotate;
 using Atalasoft.Annotate.Formatters;
 using Atalasoft.Annotate.UI;
@@ -33,11 +34,11 @@ using Atalasoft.Imaging.Codec;
 
             public LayerData[] ToWebDocumentViewer(LayerCollection layerCollection, string docPath)
             {
-                Size[] pageSizes = new Size[0];
+                var pageSizes = new Size[0];
 
                 if (File.Exists(docPath))
                 {
-                    using (FileStream fs = new FileStream(docPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    using (var fs = new FileStream(docPath, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
                         pageSizes = new PageSizeAggregate(new DocumentPageSizes(RegisteredDecoders.GetDecoder(fs), fs, false)).ToArray();
                     }
@@ -48,7 +49,7 @@ using Atalasoft.Imaging.Codec;
 
             public LayerData[] ToWebDocumentViewer(LayerCollection layerCollection, Size[] pageSizes)
             {
-                LayerData[] layers = new LayerData[0];
+                var layers = new LayerData[0];
                 if (layerCollection != null)
                 {
                     layers = LoadAnnotationData(layerCollection);
@@ -61,11 +62,11 @@ using Atalasoft.Imaging.Codec;
 
             public LayerCollection ToAnnotationUI(string xmpPath, string docPath)
             {
-                LayerData[] layers = new LayerData[0];
+                var layers = new LayerData[0];
 
                 if (File.Exists(xmpPath))
                 {
-                    using (FileStream fs = new FileStream(xmpPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    using (var fs = new FileStream(xmpPath, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
                         layers = LoadAnnotationData(fs);
                     }
@@ -76,11 +77,11 @@ using Atalasoft.Imaging.Codec;
 
             public LayerCollection ToAnnotationUI(LayerData[] layers, string docPath)
             {
-                Size[] pageSizes = new Size[0];
+                var pageSizes = new Size[0];
 
                 if (File.Exists(docPath))
                 {
-                    using (FileStream fs = new FileStream(docPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    using (var fs = new FileStream(docPath, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
                         pageSizes = new PageSizeAggregate(new DocumentPageSizes(RegisteredDecoders.GetDecoder(fs), fs, false)).ToArray();
                     }
@@ -91,24 +92,20 @@ using Atalasoft.Imaging.Codec;
 
             public LayerCollection ToAnnotationUI(LayerData[] layers, Size[] pageSizes)
             {
-                LayerCollection retLayers = new LayerCollection();
+                var retLayers = new LayerCollection();
 
                 if (layers != null)
                 {
                     ConvertFromWDV(layers, pageSizes);
 
-                    foreach (LayerData layer in layers)
+                    foreach (var outAnnot in layers.Select(layer => _factories.GetAnnotationFromData(layer)))
                     {
-                        AnnotationUI outAnnot = _factories.GetAnnotationFromData(layer);
-                        LayerAnnotation layerAnnot = outAnnot as LayerAnnotation;
-
-                        retLayers.Add(layerAnnot);
+                        retLayers.Add(outAnnot as LayerAnnotation);
                     }
                 }
 
                 return retLayers;
             }
-
 
             #region Annotation Loading
 
@@ -116,45 +113,53 @@ using Atalasoft.Imaging.Codec;
             {
                 LayerData[] layers = null;
 
-                LayerCollection lc = data as LayerCollection;
-                if (lc != null && lc.Count != 0)
+                var layerCollection = data as LayerCollection;
+                if (layerCollection != null && layerCollection.Count != 0)
                 {
-                    layers = new LayerData[lc.Count];
+                    layers = new LayerData[layerCollection.Count];
 
-                    for (int i = 0; i < layers.Length; i++)
+                    for (var i = 0; i < layers.Length; i++)
                     {
-                        layers[i] = (LayerData)lc[i].Data;
+                        layers[i] = (LayerData)layerCollection[i].Data;
                     }
+
+                    return layers;
                 }
 
-                LayerData[] lda = data as LayerData[];
-                if (lda != null)
+                var d = new LayerData[0];
+                var name = d.GetType().Name;
+                var layerData = data as LayerData[];
+                if (layerData != null)
                 {
-                    layers = lda;
+                    layers = layerData;
+                    return layers;
                 }
 
-                LayerAnnotation la = data as LayerAnnotation;
-                if (la != null)
+                var layerAnnotation = data as LayerAnnotation;
+                if (layerAnnotation != null)
                 {
                     layers = new LayerData[1];
-                    layers[0] = (LayerData)la.Data;
+                    layers[0] = (LayerData)layerAnnotation.Data;
+                    return layers;
                 }
 
-                LayerData ld = data as LayerData;
+                var ld = data as LayerData;
                 if (ld != null)
                 {
                     layers = new LayerData[1];
-                    layers[0] = ld;
+                    layers[0] = ld; 
+                    return layers;
                 }
 
-                AnnotationUI ann = data as AnnotationUI;
+                var ann = data as AnnotationUI;
                 if (ann != null)
                 {
                     layers = new LayerData[1];
                     layers[0].Items.Add(ann.Data);
+                    return layers;
                 }
 
-                AnnotationData ad = data as AnnotationData;
+                var ad = data as AnnotationData;
                 if (ad != null)
                 {
                     layers = new LayerData[1];
