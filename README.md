@@ -1,6 +1,7 @@
 # Atalasoft DotImage Web Document Viewer demo
 Demo application shows basic usage of Web Document Viewer component of [DotImage](https://www.atalasoft.com/Products/DotImage) product. Live verions of the demo is hosted on Azure: http://atalasoft-viewer-demo.azurewebsites.net/
 
+![](https://atalasoft.visualstudio.com/_apis/public/build/definitions/789e0a22-6f04-4fac-91a5-ccc70df2a1f1/1/badge)
 
 ## Description
 
