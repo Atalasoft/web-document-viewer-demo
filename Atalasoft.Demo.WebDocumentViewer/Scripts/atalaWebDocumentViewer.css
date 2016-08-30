@@ -1,6 +1,4 @@
-﻿@import url('jquery-ui-1.8.14.custom.css');
-
-.atala-document-container { border: 1px solid #DDDDDD;  }
+﻿.atala-document-container { border: 1px solid #DDDDDD;  }
 .atala-document-toolbar { border: 1px solid #DDDDDD; background-color: #DDDDDD; }
      
 .atala-ui { font-size: 0.8em; }
@@ -35,5 +33,37 @@
 .atala-ui-icon-rotate-left { background-position: -320px 0; }
 .atala-ui-icon-rotate-right { background-position: -336px 0; }
 
+.atala-ui-icon-selection { background-position: -352px 0; }
+.atala-ui-icon-zoom-area { background-position: -368px 0; }
+.atala-ui-icon-text-tool { background-position: -384px 0; }
+.atala-ui-icon-pan-tool { background-position: -400px 0; }
+
+.atala-ui-icon-search-next { background-position: -416px 0; }
+.atala-ui-icon-search-prev { background-position: -432px 0; }
+
 .atala-ui-form-highlight { background-color: rgb(204, 215, 255) !important; background-color: rgba(204, 215, 255, .7) !important }
 .atala-ui-form-required { border: 3px solid red !important }
+
+.atala_search_container { width: 200px; float: right; }
+.atala_search_input { 
+    width: 100%; 
+    border: 1px solid #dedede; 
+    border-right: 0; 
+    box-sizing: border-box; 
+    max-width: 100%; 
+    background: #fff url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=) no-repeat right -10px center;
+    padding: 3px 18px 3px 4px;
+    transition: background 0.4s;
+    height: 30px;
+}
+
+.atala_search_input.atala_search_input_clearable  { background-position: right 5px center; }
+.atala_search_input.atala_search_input_clear_hover{ cursor: pointer; }
+.atala_search_input::-ms-clear {display: none; width:0; height:0;}
+.atala_search_input.atala_search_input_empty { border: 1px solid red; }
+.atala_search_input.atala_search_input_loading {	
+	background: url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=) right 5px center no-repeat, url('images/atala-ui-spinner.gif') right 15px center no-repeat;
+	padding-right: 35px;
+	background-color: #fff;
+	transition: background 0	
+}
