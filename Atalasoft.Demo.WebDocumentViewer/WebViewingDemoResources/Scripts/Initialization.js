@@ -3,7 +3,6 @@ var _thumbs;
 var _scanPage = 1;
 var _serverUrl = "Handlers/WebDocumentViewerHandler.ashx";
 var _docUrl = "~/WebViewingDemoResources/startup.pdf";
-var _savePath = "~/WebViewingDemoResources/Saved/";
 var _thumbsShowing = true;
 
 var _initialViewerWidth;
@@ -38,10 +37,14 @@ function InitializeViewers() {
         parent: $(".atala-document-viewer"),
         toolbarparent: $(".atala-document-toolbar"),
         serverurl: _serverUrl,
-        //documenturl: _docUrl,
-        //savepath: _savePath,
         allowannotations: true,
-        showbuttontext: false
+        showbuttontext: false,
+        allowtext: true,
+        mousetool: {
+            text: {
+                hookcopy: true
+            }
+        }
     });
 
     _thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
