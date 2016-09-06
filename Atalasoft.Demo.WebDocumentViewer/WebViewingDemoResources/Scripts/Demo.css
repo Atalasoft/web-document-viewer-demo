@@ -103,18 +103,7 @@ padding-left:13px;
 
 .atala-document-toolbar div
 {
-    height:32px;
     display: inline-block;
-}
-
-.atala-document-toolbar .atala_toolbar
-{
-    display: inline;
-}
-
-.atala-document-toolbar .atala_toolbar .atala_search_container
-{
-    width:255px;
 }
 
 .atala-document-viewer

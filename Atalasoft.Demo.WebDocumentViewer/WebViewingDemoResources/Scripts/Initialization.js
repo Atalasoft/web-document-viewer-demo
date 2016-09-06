@@ -35,14 +35,15 @@ $(function() {
 function InitializeViewers() {
     _viewer = new Atalasoft.Controls.WebDocumentViewer({
         parent: $(".atala-document-viewer"),
-        toolbarparent: $(".atala-document-toolbar"),
+        toolbarparent: $(".atala-document-toolbar"), 
         serverurl: _serverUrl,
         allowannotations: true,
         showbuttontext: false,
         allowtext: true,
         mousetool: {
             text: {
-                hookcopy: true
+                hookcopy: true,
+                allowsearch: false
             }
         }
     });
