@@ -33,6 +33,17 @@ padding-left:13px;
     margin-right: -3px;
 }
 
+.atala_search_container
+{
+    display:inline-block;
+    width:250px;
+}
+
+.atala_search_container input
+{
+    width:185px;
+}
+
 .clickme
 {
     height:100%;

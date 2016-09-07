@@ -9,6 +9,7 @@ using Atalasoft.Imaging.WebControls;
 using System.Web;
 using System.IO;
 using Atalasoft.Imaging.WebControls.Text;
+using System.Diagnostics;
 
 namespace Atalasoft.Demo.WebDocumentViewer.Handlers
 {
@@ -55,7 +56,7 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
                     }
                     catch (ImageReadException imagingException)
                     {
-                        //Debug.WriteLine("Text extraction: image type is not recognized. {0}", imagingException);
+                        Debug.WriteLine("Text extraction: image type is not recognized. {0}", imagingException);
                     }
                 }
 
