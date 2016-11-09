@@ -42,7 +42,12 @@ function InitializeViewers() {
         //savepath: _savePath,
         allowannotations: true,
         showbuttontext: false,
-        allowtext: true
+        allowtext: true,
+        mousetool: {
+            text: {
+                hookcopy: true
+            }
+        }
     });
 
     _thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
