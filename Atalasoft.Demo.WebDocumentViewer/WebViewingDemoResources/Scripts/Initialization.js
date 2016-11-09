@@ -3,7 +3,6 @@ var _thumbs;
 var _scanPage = 1;
 var _serverUrl = "Handlers/WebDocumentViewerHandler.ashx";
 var _docUrl = "~/WebViewingDemoResources/startup.pdf";
-var _savePath = "~/WebViewingDemoResources/Saved/";
 var _thumbsShowing = true;
 
 var _initialViewerWidth;
@@ -23,7 +22,7 @@ $(function() {
         };
 
         SetupClickBar();
-
+        __CSearchBox($(".atala-document-toolbar"), 100, true);
         AddFileToolbar();
 
     } //End Try
@@ -36,12 +35,17 @@ $(function() {
 function InitializeViewers() {
     _viewer = new Atalasoft.Controls.WebDocumentViewer({
         parent: $(".atala-document-viewer"),
-        toolbarparent: $(".atala-document-toolbar"),
+        toolbarparent: $(".atala-document-toolbar"), 
         serverurl: _serverUrl,
-        //documenturl: _docUrl,
-        //savepath: _savePath,
         allowannotations: true,
-        showbuttontext: false
+        showbuttontext: false,
+        allowtext: true,
+        mousetool: {
+            text: {
+                hookcopy: true,
+                allowsearch: false
+            }
+        }
     });
 
     _thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
@@ -53,11 +57,7 @@ function InitializeViewers() {
         viewer: _viewer
     });
 
-    _viewer.bind({
-        "error": onError,
-        "documentsaved": onDocumentSaved,
-        "documentloaded": onDocumentLoaded
-    });
+    _viewer.bind("error", onError);
 
     $("body").bind("beforeunload", function() {
         _viewer.zoom(1);
@@ -65,15 +65,11 @@ function InitializeViewers() {
     });
 
     function onError(e) {
-        _testing = e.message;
+        if(console && console.log)
+            console.log(e);
+
         if (e.name != "ResumePageRequestsError")
             alert("Error: " + e.name + "\n" + e.message);
-    }
-
-    function onDocumentSaved(e) {
-    }
-
-    function onDocumentLoaded(e) {
     }
 
     _viewer.annotations.setDefaults([
@@ -222,14 +218,22 @@ function AddFileToolbar() {
     var toolbar = $("<div />");
     toolbar.addClass("UploadToolbar");
     toolbar.append(AddFileUploadButton());
-    //toolbar.append(AddFileSaveButton());
+
+    $(".atala-document-toolbar").prepend(toolbar);
+}
+
+function AddFileToolbar() {
+
+    var toolbar = $("<div />");
+    toolbar.addClass("UploadToolbar");
+    toolbar.append(AddFileUploadButton());
 
     $(".atala-document-toolbar").prepend(toolbar);
 }
 
 function AddFileUploadButton() {
 
-	var uploadButton = $("<button id='undefined_wdv1_toolbar_Button_Upload' title='Upload File' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button  atala-upload-button' role='utton'>Upload File</button>");
+	var uploadButton = $("<button id='UploadButton' title='Upload File' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button  atala-upload-button' role='utton'>Upload File</button>");
 
     uploadButton.click(ShowFileUpload);
 
@@ -240,18 +244,6 @@ function AddFileUploadButton() {
     return uploadButton;
 }
 
-function AddFileSaveButton() {
-
-	var saveButton = $("<button id='undefined_wdv1_toolbar_Button_SaveFile' title='Save Document' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button atala-save-document-button' role='button'>Save Document</button>");
-
-    saveButton.click(SaveFile);
-
-    saveButton.button({
-        icons: { primary: "atala-ui-icon atala-ui-icon-save-document" }, text: false
-    });
-    
-    return saveButton;
-}
 
 function ShowFileUpload() {
     try {
@@ -350,16 +342,209 @@ function ShowLoadingGif(gif) {
     gif.css("width", w);
 }
 
-function SaveFile(){
-
-    _viewer.save(null, function() {
-        window.open("Handlers/ProcessingHandler.svc/MakePrintPdf?document=" + _docUrl + "&annotationFolder=" + _savePath); 
-    });
-
-    return false;
-}
-
 function AppendStatus(error){
     console.log(error);
     alert(error);
+}
+
+function __CSearchBox(toolbarParent, searchDelay, wrapSearch) {
+    var styles = {
+        clearable: 'atala_search_input_clearable',
+        onclear: 'atala_search_input_clear_hover',
+        inputEmpty: 'atala_search_input_empty',
+        loading: 'atala_search_input_loading'
+    };
+
+    var parent = toolbarParent;
+    var delay = searchDelay || 100;
+    var wrap = wrapSearch ? true : false;
+    var iterator = null;
+    var searchTimeout = null; // timeout to trigger search when user finished typing in search box.
+    var container,
+        inputBox;
+
+    __initDom();
+
+    function __initDom() {
+        container = $('<div />').addClass(_viewer.domclasses.atala_search_container);
+
+        inputBox = $('<input type="text" placeholder="Search..." />').addClass(_viewer.domclasses.atala_search_input).addClass('ui-widget').css('height',  '24px');
+        inputBox.bind({
+            keydown: __onInputKeyUp,
+            'input propertychange': __onIputChange
+        });
+
+        var inputSpan = $('<span />').appendTo(container).css({ width: '100%' });
+        inputSpan.append(inputBox);
+
+        var buttonsSpan = $('<span />').appendTo(container);
+        $('<button />')
+            .prop('title', 'Next')
+            .click(__makeButtonHandler(__onSearchNext))
+            .button({
+                icons: { primary: 'atala-ui-icon atala-ui-icon-search-next' },
+                text: false
+            })
+            .addClass('atala-ui-button')
+            .css({ 'float': 'right', 'height': '20px' })
+            .appendTo(buttonsSpan);
+
+        $('<button />')
+            .prop('title', 'Previous')
+            .click(__makeButtonHandler(__onSearchPrev))
+            .button({
+                icons: { primary: 'atala-ui-icon atala-ui-icon-search-prev' },
+                text: false
+            })
+            .addClass('atala-ui-button')
+            .css({ 'float': 'right', 'height': '20px'  })
+            .appendTo(buttonsSpan);
+
+        container.on('mousemove', '.' + styles.clearable, __togglePointer)
+                 .on('touchstart click', '.' + styles.onclear, __onClearClick);
+
+        parent.append(container);
+        parent.append($('<div style="clear:both;"></div>'));
+    }
+
+    this.dispose = __disposeSearchBox;
+    function __disposeSearchBox() {
+        inputBox.unbind({
+            keypress: __onInputKeyUp,
+            'input propertychange': __onIputChange
+        });
+
+        container.off('mousemove', '.' + styles.clearable, __togglePointer)
+            .off('touchstart click', '.' + styles.onclear, __onClearClick);
+
+        if (iterator) {
+            iterator.dispose();
+        }
+
+        container.remove();
+    }
+
+    function __onIputChange() {
+
+        var text = inputBox.val();
+
+        if (text) {
+            inputBox.addClass(styles.clearable);
+        } else {
+            inputBox.removeClass(styles.clearable);
+        }
+
+        if (text && iterator && iterator.isValid() && text === iterator.getQuery()) {
+            return true;
+        }
+
+        clearTimeout(searchTimeout);
+        iterator = null;
+
+        if (text && text.length >= 3) {
+            __updateMatchIndicator(true);
+            searchTimeout = setTimeout(function () {
+                iterator = _viewer.text.search(text, _viewer.getCurrentPageIndex(), __onNextMatch);
+                __suspendUI(true);
+            }, delay);
+
+            return false;
+        } else {
+            __onClearSearch();
+        }
+    }
+
+    function __onInputKeyUp(e) {
+        var text = inputBox.val();
+        if (e.keyCode === 13 && iterator && text && iterator.isValid() && iterator.getQuery() === text) {
+            if (!e.shiftKey) {
+                __onSearchNext();
+            } else {
+                __onSearchPrev();
+            }
+            return false;
+        } else if (e.keyCode === 13 && (!iterator || !iterator.isValid())) {
+            __onIputChange();
+            return false;
+        }
+        else if (e.keyCode === 27) {
+            __onClearSearch();
+            __onClearClick();
+            return false;
+        } else if (Atalasoft.Utils.Browser.Explorer && Atalasoft.Utils.Browser.Version <= 9 && (e.keyCode === 8 || e.keyCode === 46)) {
+            // old ie incorrectly handles delete/backspace keys: they are not throwing oninput. so workaround it here.
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(function () {
+                __onIputChange();
+            }, delay);
+        }
+    }
+
+    function __onSearchNext() {
+        if (iterator) {
+            __suspendUI(true);
+            iterator.next(__onNextMatch);
+        }
+    }
+
+    function __onSearchPrev() {
+        if (iterator) {
+            __suspendUI(true);
+            iterator.prev(__onNextMatch);
+        }
+    }
+
+    function __onClearSearch() {
+        iterator = null;
+        _viewer.text.search('');
+        __suspendUI(false);
+        __updateMatchIndicator(true);
+    }
+
+    function __onNextMatch(iterator, match) {
+        if (iterator.isValid()) {
+            __suspendUI(false);
+            iterator.wrap = wrap;
+            if (!match) {
+                __updateMatchIndicator(match);
+            }
+        }
+    }
+
+    function __suspendUI(suspended) {
+        __toggleStyle(styles.loading, suspended);
+    }
+
+    function __updateMatchIndicator(match) {
+        __toggleStyle(styles.inputEmpty, !match);
+    }
+
+    function __makeButtonHandler(fn) {
+        return function (e) {
+            e.preventDefault();
+            if (fn) {
+                fn();
+            }
+        };
+    }
+
+    function __toggleStyle(style, enabled) {
+        if (enabled) {
+            inputBox.addClass(style);
+        } else {
+            inputBox.removeClass(style);
+        }
+    }
+
+    function __togglePointer(e) {
+        __toggleStyle(styles.onclear, this.offsetWidth - 18 < e.clientX - this.getBoundingClientRect().left);
+    }
+
+    function __onClearClick(e) {
+        if (e) {
+            e.preventDefault();
+        }
+        inputBox.removeClass(styles.clearable).removeClass(styles.onclear).val('').change();
+        __onIputChange();
+    }
 }
