@@ -41,7 +41,13 @@ function InitializeViewers() {
         //documenturl: _docUrl,
         //savepath: _savePath,
         allowannotations: true,
-        showbuttontext: false
+        showbuttontext: false,
+        allowtext: true,
+        mousetool: {
+            text: {
+                hookcopy: true
+            }
+        }
     });
 
     _thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
@@ -218,13 +224,9 @@ function SetViewerWidth(){
 }
 
 function AddFileToolbar() {
-    
-    var toolbar = $("<div />");
-    toolbar.addClass("UploadToolbar");
-    toolbar.append(AddFileUploadButton());
-    //toolbar.append(AddFileSaveButton());
 
-    $(".atala-document-toolbar").prepend(toolbar);
+
+    $("." + _viewer.domclasses.atala_toolbar).prepend(AddFileUploadButton());
 }
 
 function AddFileUploadButton() {
@@ -290,7 +292,7 @@ function ShowFileUpload() {
             done: function (e, data) {
                 dim.hide();
                 gif.hide();
-                if (data.result.success === "true") {
+                if (data.result.success) {
                     _docUrl = data.result.file;
                     _thumbs.OpenUrl(_docUrl, "");
 
