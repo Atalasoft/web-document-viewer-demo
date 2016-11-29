@@ -85,7 +85,7 @@ function InitializeViewers() {
     _viewer.annotations.setDefaults([
         {
             type: "line",
-            outline: { color: "#f00", opacity: 0.80, width: 15, endcap: { width: "wide", height: "long", style: "classic" } }
+            outline: { color: "#f00", opacity: 0.80, width: 15, endcap: { width: "wide", height: "long", style: "block" } }
         },
         {
             type: "freehand",
