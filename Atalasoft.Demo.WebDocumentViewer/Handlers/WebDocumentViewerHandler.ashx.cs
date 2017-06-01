@@ -23,7 +23,7 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
             Licensing.AtalaLicense.SetAssemblyLicense(System.Web.HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["AtalasoftLicenseString"]));
             
             RegisteredDecoders.Decoders.Add(new PdfDecoder { Resolution = 200, RenderSettings = new RenderSettings { AnnotationSettings = AnnotationRenderSettings.None } });
-            RegisteredDecoders.Decoders.Add(new OfficeDecoder { Resolution = 200 });
+            //RegisteredDecoders.Decoders.Add(new OfficeDecoder { Resolution = 200 });
             RegisteredDecoders.Decoders.Add(new RawDecoder());
             RegisteredDecoders.Decoders.Add(new DwgDecoder());
             RegisteredDecoders.Decoders.Add(new Jb2Decoder());
