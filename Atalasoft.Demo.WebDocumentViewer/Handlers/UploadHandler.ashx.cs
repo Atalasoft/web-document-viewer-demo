@@ -16,8 +16,10 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
     /// </summary>
     public class UploadHandler : IHttpHandler
     {
+        public const string GuardFileName = "keep.me";
         public const string CacheFolder = "WebViewingDemoResources/TempSession/";
         private const string ContentType = "application/json";
+
         private const int CacheMonitorInterval = 8;
         private readonly List<string> _blacklistedExtensions = new List<string> {".exe", ".bat", ".com"};
         private static CacheItemRemovedCallback _onCacheRemove;
@@ -108,6 +110,10 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
             {
                 try
                 {
+                    // Skip guard file
+                    if (Path.GetFileName(filePath).Equals(GuardFileName))
+                        continue;
+
                     if (File.GetLastAccessTimeUtc(filePath) < DateTime.UtcNow.AddHours(-CacheMonitorInterval))
                         File.Delete(filePath);
                 }
