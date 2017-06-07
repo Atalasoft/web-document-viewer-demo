@@ -56,6 +56,7 @@ function InitializeViewers() {
         documenturl: _docUrl, // + _docFile, 	// document url relative to the server handler url
         allowannotations: true,
         allowdragdrop: true,
+        dragdelay: Atalasoft.Utils.Browser.Mobile.Any() ? 750 : 250,
         viewer: _viewer
     });
 
