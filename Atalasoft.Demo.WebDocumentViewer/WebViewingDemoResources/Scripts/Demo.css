@@ -101,9 +101,24 @@ padding-left:13px;
     height:600px;
 }
 
+.atala-document-toolbar .atala_toolbar
+{
+    display: inline;
+}
+
+.atala-document-toolbar 
+{
+    overflow: auto
+}
+
 .atala-document-toolbar div
 {
-    display: inline-block;
+    display: inline-block
+}
+
+.atala_search_input 
+{
+    height: 24px
 }
 
 .atala-document-viewer
@@ -119,5 +134,6 @@ padding-left:13px;
     background-repeat:no-repeat;
 }
 
+
 .atala-ui-icon-save-document { background-position: -168px 0; }
-.atala-ui-icon-upload{ background-image: url('../open.png') !important; }
+.atala-ui-icon.atala-ui-icon-upload{ background-image: url('../open.png') !important; }
