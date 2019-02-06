@@ -56,62 +56,62 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Atalasoft.dotImage, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.AdvancedDocClean, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.AdvancedDocClean.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.AdvancedDocClean, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.AdvancedDocClean.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Dicom, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Dicom.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Dicom, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Dicom.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Dwg, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Dwg.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Dwg, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Dwg.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Jbig2, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Jbig2.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Jbig2, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Jbig2.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Jpeg2000, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Jpeg2000.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Jpeg2000, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Jpeg2000.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Lib, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Lib.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Lib, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Lib.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Ocr, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Ocr.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Ocr, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Ocr.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Office, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Office.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Office, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Office.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Pdf, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Pdf.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Pdf, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Pdf.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.PdfDoc.Bridge, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.PdfDoc.Bridge.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.PdfDoc.Bridge, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.PdfDoc.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.PdfReader, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.PdfReader.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.PdfReader, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.PdfReader.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Raw, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Raw.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Raw, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Raw.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.WebControls, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.WebControls.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.WebControls, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.WebControls.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.WinControls, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.WinControls.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.WinControls, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.WinControls.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Wpf, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1336\lib\net452\Atalasoft.dotImage.Wpf.dll</HintPath>
+    <Reference Include="Atalasoft.dotImage.Wpf, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1340\lib\net452\Atalasoft.dotImage.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.PdfDoc, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Atalasoft.PdfDoc.x86.11.1.0.1336\lib\net452\Atalasoft.PdfDoc.dll</HintPath>
+    <Reference Include="Atalasoft.PdfDoc, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atalasoft.PdfDoc.x86.11.1.0.1340\lib\net452\Atalasoft.PdfDoc.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.Shared, Version=11.1.0.336, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Atalasoft.Shared.11.1.0.1336\lib\net452\Atalasoft.Shared.dll</HintPath>
+    <Reference Include="Atalasoft.Shared, Version=11.1.0.340, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atalasoft.Shared.11.1.0.1340\lib\net452\Atalasoft.Shared.dll</HintPath>
     </Reference>
     <Reference Include="Perceptive.DocumentFilters, Version=11.4.0.2822, Culture=neutral, PublicKeyToken=ef6160c802066cff, processorArchitecture=MSIL">
-      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1336\lib\net452\Perceptive.DocumentFilters.dll</HintPath>
+      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1340\lib\net452\Perceptive.DocumentFilters.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -298,45 +298,45 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1336\build\Atalasoft.dotImage.Lib.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1336\build\Atalasoft.dotImage.Lib.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1340\build\Atalasoft.dotImage.Lib.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1340\build\Atalasoft.dotImage.Lib.x86.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1336\build\Atalasoft.dotImage.Lib.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1336\build\Atalasoft.dotImage.Lib.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.x86.11.1.0.1336\build\Atalasoft.dotImage.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.x86.11.1.0.1336\build\Atalasoft.dotImage.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1336\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1336\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1336\build\Atalasoft.dotImage.Dicom.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1336\build\Atalasoft.dotImage.Dicom.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1336\build\Atalasoft.dotImage.Dwg.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1336\build\Atalasoft.dotImage.Dwg.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1336\build\Atalasoft.dotImage.Jbig2.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1336\build\Atalasoft.dotImage.Jbig2.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1336\build\Atalasoft.dotImage.Jpeg2000.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1336\build\Atalasoft.dotImage.Jpeg2000.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfReader.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfReader.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1336\build\Atalasoft.dotImage.Office.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1336\build\Atalasoft.dotImage.Office.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1336\build\Atalasoft.dotImage.Raw.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1336\build\Atalasoft.dotImage.Raw.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.PdfDoc.x86.11.1.0.1336\build\Atalasoft.PdfDoc.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.PdfDoc.x86.11.1.0.1336\build\Atalasoft.PdfDoc.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1336\build\Atalasoft.dotImage.Ocr.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1336\build\Atalasoft.dotImage.Ocr.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1336\build\Atalasoft.dotImage.Pdf.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1336\build\Atalasoft.dotImage.Pdf.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WebControls.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WebControls.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WinControls.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WinControls.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1336\build\Atalasoft.dotImage.Wpf.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1336\build\Atalasoft.dotImage.Wpf.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1340\build\Atalasoft.dotImage.Lib.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Lib.x86.11.1.0.1340\build\Atalasoft.dotImage.Lib.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.x86.11.1.0.1340\build\Atalasoft.dotImage.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.x86.11.1.0.1340\build\Atalasoft.dotImage.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1340\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1340\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1340\build\Atalasoft.dotImage.Dicom.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1340\build\Atalasoft.dotImage.Dicom.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1340\build\Atalasoft.dotImage.Dwg.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1340\build\Atalasoft.dotImage.Dwg.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1340\build\Atalasoft.dotImage.Jbig2.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1340\build\Atalasoft.dotImage.Jbig2.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1340\build\Atalasoft.dotImage.Jpeg2000.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1340\build\Atalasoft.dotImage.Jpeg2000.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfReader.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfReader.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1340\build\Atalasoft.dotImage.Office.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1340\build\Atalasoft.dotImage.Office.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1340\build\Atalasoft.dotImage.Raw.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1340\build\Atalasoft.dotImage.Raw.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.PdfDoc.x86.11.1.0.1340\build\Atalasoft.PdfDoc.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.PdfDoc.x86.11.1.0.1340\build\Atalasoft.PdfDoc.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1340\build\Atalasoft.dotImage.Ocr.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1340\build\Atalasoft.dotImage.Ocr.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1340\build\Atalasoft.dotImage.Pdf.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1340\build\Atalasoft.dotImage.Pdf.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WebControls.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WebControls.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WinControls.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WinControls.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1340\build\Atalasoft.dotImage.Wpf.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1340\build\Atalasoft.dotImage.Wpf.x86.targets'))" />
   </Target>
-  <Import Project="..\packages\Atalasoft.dotImage.x86.11.1.0.1336\build\Atalasoft.dotImage.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.x86.11.1.0.1336\build\Atalasoft.dotImage.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1336\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1336\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1336\build\Atalasoft.dotImage.Dicom.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1336\build\Atalasoft.dotImage.Dicom.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1336\build\Atalasoft.dotImage.Dwg.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1336\build\Atalasoft.dotImage.Dwg.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1336\build\Atalasoft.dotImage.Jbig2.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1336\build\Atalasoft.dotImage.Jbig2.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1336\build\Atalasoft.dotImage.Jpeg2000.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1336\build\Atalasoft.dotImage.Jpeg2000.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfReader.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfReader.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1336\build\Atalasoft.dotImage.Office.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1336\build\Atalasoft.dotImage.Office.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1336\build\Atalasoft.dotImage.Raw.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1336\build\Atalasoft.dotImage.Raw.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.PdfDoc.x86.11.1.0.1336\build\Atalasoft.PdfDoc.x86.targets" Condition="Exists('..\packages\Atalasoft.PdfDoc.x86.11.1.0.1336\build\Atalasoft.PdfDoc.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1336\build\Atalasoft.dotImage.Ocr.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1336\build\Atalasoft.dotImage.Ocr.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1336\build\Atalasoft.dotImage.Pdf.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1336\build\Atalasoft.dotImage.Pdf.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1336\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WebControls.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WebControls.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WinControls.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1336\build\Atalasoft.dotImage.WinControls.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1336\build\Atalasoft.dotImage.Wpf.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1336\build\Atalasoft.dotImage.Wpf.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.x86.11.1.0.1340\build\Atalasoft.dotImage.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.x86.11.1.0.1340\build\Atalasoft.dotImage.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1340\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.AdvancedDocClean.x86.11.1.0.1340\build\Atalasoft.dotImage.AdvancedDocClean.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1340\build\Atalasoft.dotImage.Dicom.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Dicom.x86.11.1.0.1340\build\Atalasoft.dotImage.Dicom.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1340\build\Atalasoft.dotImage.Dwg.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Dwg.x86.11.1.0.1340\build\Atalasoft.dotImage.Dwg.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1340\build\Atalasoft.dotImage.Jbig2.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Jbig2.x86.11.1.0.1340\build\Atalasoft.dotImage.Jbig2.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1340\build\Atalasoft.dotImage.Jpeg2000.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.1.0.1340\build\Atalasoft.dotImage.Jpeg2000.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfReader.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.PdfReader.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfReader.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1340\build\Atalasoft.dotImage.Office.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Office.x86.11.1.0.1340\build\Atalasoft.dotImage.Office.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1340\build\Atalasoft.dotImage.Raw.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Raw.x86.11.1.0.1340\build\Atalasoft.dotImage.Raw.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.PdfDoc.x86.11.1.0.1340\build\Atalasoft.PdfDoc.x86.targets" Condition="Exists('..\packages\Atalasoft.PdfDoc.x86.11.1.0.1340\build\Atalasoft.PdfDoc.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1340\build\Atalasoft.dotImage.Ocr.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Ocr.x86.11.1.0.1340\build\Atalasoft.dotImage.Ocr.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1340\build\Atalasoft.dotImage.Pdf.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Pdf.x86.11.1.0.1340\build\Atalasoft.dotImage.Pdf.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.1.0.1340\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WebControls.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.WebControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WebControls.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WinControls.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.WinControls.x86.11.1.0.1340\build\Atalasoft.dotImage.WinControls.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1340\build\Atalasoft.dotImage.Wpf.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Wpf.x86.11.1.0.1340\build\Atalasoft.dotImage.Wpf.x86.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
