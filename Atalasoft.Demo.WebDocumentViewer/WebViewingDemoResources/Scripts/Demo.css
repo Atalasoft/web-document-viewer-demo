@@ -16,7 +16,7 @@ padding-left:13px;
 #content .main-viewer ul { /* Reset Annotation Popup Menus */
 	list-style-image: none;
 	margin: 10px;
-	padding: 0px;
+	padding: 0;
 	font-weight: normal;
 	border: 0;
 }
@@ -96,14 +96,9 @@ padding-left:13px;
     height:100%;
 }
 
-.inner-viewer
-{
-    height:600px;
-}
-
-.atala-document-toolbar .atala_toolbar
-{
-    display: inline;
+.inner-viewer {
+    height: 600px;
+    vertical-align: top;
 }
 
 .atala-document-toolbar 
@@ -111,29 +106,13 @@ padding-left:13px;
     overflow: auto
 }
 
-.atala-document-toolbar div
-{
-    display: inline-block
-}
-
 .atala_search_input 
 {
     height: 24px
 }
 
-.atala-document-viewer
-{
+.atala-document-viewer {
     height: 100%;
     display: inline-block;
+    vertical-align: top;
 }
-
-.loadingGif
-{
-    position:absolute;
-    background-image: url('../loading.gif');    
-    background-repeat:no-repeat;
-}
-
-
-.atala-ui-icon-save-document { background-position: -168px 0; }
-.atala-ui-icon.atala-ui-icon-upload{ background-image: url('../open.png') !important; }
