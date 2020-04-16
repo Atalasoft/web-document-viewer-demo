@@ -250,3 +250,5 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/Atalasoft.Demo.WebDocumentViewer/WebViewingDemoResources/TempSession/10Numbered Pages.TIF
+/Atalasoft.Demo.WebDocumentViewer/WebViewingDemoResources/TempSession/Hero.pdf
