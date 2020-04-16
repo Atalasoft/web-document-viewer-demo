@@ -3,14 +3,12 @@ var _thumbs;
 var _scanPage = 1;
 var _serverUrl = "Handlers/WebDocumentViewerHandler.ashx";
 var _docUrl = "~/WebViewingDemoResources/startup.pdf";
-//var _savePath = "~/WebViewingDemoResources/Saved/";
-var _uploadPath = "~/WebViewingDemoResources/TempSession/";
+var _savePath = "~/WebViewingDemoResources/Saved/";
 var _thumbsShowing = true;
 
 var _initialViewerWidth;
 var _nothumbsViewerWidth;
 var _testing;
-var _lastUploadedFile;
 
 $(function() {
 
@@ -25,6 +23,8 @@ $(function() {
         };
 
         SetupClickBar();
+
+        AddFileToolbar();
 
     } //End Try
     catch (error) {
@@ -47,80 +47,6 @@ function InitializeViewers() {
             text: {
                 hookcopy: true
             }
-        },
-        upload: {
-            enabled: true,
-            uploadpath: _uploadPath,
-            allowedfiletypes: '.jpg,.pdf,.png,.jpeg,image/tiff,.dwg,.doc,.docx,.raw,.orf,.raf,.cr3,.crw,.jbig2,.xps',
-            allowedmaxfilesize: 1 * 1024 * 1024,
-            allowmultiplefiles: false,
-            allowdragdrop: true,
-        },
-        annotations: {
-            defaults: [
-                {
-                    type: "line",
-                    outline: { color: "#f00", opacity: 0.80, width: 15, endcap: { width: "wide", height: "long", style: "block" } }
-                },
-                {
-                    type: "freehand",
-                    outline: { color: "#00f", opacity: 0.80, width: 15 }
-                },
-                {
-                    type: "text",
-                    text: { value: "Double-click to change text", align: "left", font: { color: "#009", family: "Times New Roman", size: 36 } },
-                    outline: { color: "#00a", opacity: 0.80, width: 1 },
-                    fill: { color: "#ff9", opacity: 1 }
-                },
-                {
-                    type: "rectangle",
-                    fill: { color: "black", opacity: 1 }
-                }
-            ],
-            stamps: [
-                {
-                    "name": "Approved",
-                    "fill": {
-                        "color": "white",
-                        "opacity": 0.50
-                    },
-                    "outline": {
-                        "color": "green",
-                        "width": 15
-                    },
-                    "text": {
-                        "value": "APPROVED",
-                        "align": "center",
-                        "font": {
-                            "bold": false,
-                            "color": "green",
-                            "family": "Georgia",
-                            "size": 64
-                        }
-                    }
-                },
-                {
-                    "name": "Rejected",
-                    "fill": {
-                        "color": "white",
-                        "opacity": 0.50
-                    },
-                    "outline": {
-                        "color": "red",
-                        "width": 15
-                    },
-                    "text": {
-                        "value": "REJECTED",
-                        "align": "center",
-                        "font": {
-                            "bold": false,
-                            "color": "red",
-                            "family": "Georgia",
-                            "size": 64
-                        }
-                    }
-                }
-            ]
         }
     });
 
@@ -136,9 +62,8 @@ function InitializeViewers() {
 
     _viewer.bind({
         "error": onError,
-        'fileaddedtoupload': onFileAdded,
-        'fileuploadfinished': onFileUploadFinished,
-        'uploadfinished': onUploadFinished,
+        "documentsaved": onDocumentSaved,
+        "documentloaded": onDocumentLoaded
     });
 
     $("body").bind("beforeunload", function() {
@@ -152,33 +77,77 @@ function InitializeViewers() {
             alert("Error: " + e.name + "\n" + e.message);
     }
 
+    function onDocumentSaved(e) {
+    }
 
-    function onFileAdded(eventObj) {
-        if (!eventObj.success) {
-            switch (eventObj.reason) {
-            case 1:
-                ShowError("The size of file exceeds 1 Mb permitted.");
-                break;
-            case 2:
-                ShowError("Prohibited file type.");
-                break;
-            case 3:
-                ShowError("File with same name is already added to upload. ");
-                break;
-            }
+    function onDocumentLoaded(e) {
+    }
 
+    _viewer.annotations.setDefaults([
+        {
+            type: "line",
+            outline: { color: "#f00", opacity: 0.80, width: 15, endcap: { width: "wide", height: "long", style: "block" } }
+        },
+        {
+            type: "freehand",
+            outline: { color: "#00f", opacity: 0.80, width: 15 }
+        },
+        {
+            type: "text",
+            text: { value: "Double-click to change text", align: "left", font: { color: "#009", family: "Times New Roman", size: 36 } },
+            outline: { color: "#00a", opacity: 0.80, width: 1 },
+            fill: { color: "#ff9", opacity: 1 }
+        },
+        {
+            type: "rectangle",
+            fill: { color: "black", opacity: 1 }
         }
+    ]);
 
-    }
-
-    function onFileUploadFinished(eventObj) {
-        _lastUploadedFile = eventObj.filepath;
-    }
-
-    function onUploadFinished(e) {
-        if (_lastUploadedFile)
-            _thumbs.OpenUrl(_lastUploadedFile, '');
-    }
+    _viewer.annotations.setStamps([
+        {
+            "name": "Approved",
+            "fill": {
+                "color": "white",
+                "opacity": 0.50
+            },
+            "outline": {
+                "color": "green",
+                "width": 15
+            },
+            "text": {
+                "value": "APPROVED",
+                "align": "center",
+                "font": {
+                    "bold": false,
+                    "color": "green",
+                    "family": "Georgia",
+                    "size": 64
+                }
+            }
+        },
+        {
+            "name": "Rejected",
+            "fill": {
+                "color": "white",
+                "opacity": 0.50
+            },
+            "outline": {
+                "color": "red",
+                "width": 15
+            },
+            "text": {
+                "value": "REJECTED",
+                "align": "center",
+                "font": {
+                    "bold": false,
+                    "color": "red",
+                    "family": "Georgia",
+                    "size": 64
+                }
+            }
+        }
+    ]);
 
     //Don"t show the ellipse annotation.
     $(".atala-ui-icon-ellipse").parent().css("display", "none");
@@ -197,7 +166,6 @@ function InitializeViewers() {
 
 
     SetViewerWidth();
-
 }
 
 function SetupClickBar() {
@@ -256,9 +224,100 @@ function SetViewerWidth(){
 
 }
 
-function ShowError(msg){
+function AddFileToolbar() {
 
-    $("#resultsText").html(msg);
+
+    $("." + _viewer.domclasses.atala_toolbar).prepend(AddFileUploadButton());
+}
+
+function AddFileUploadButton() {
+
+	var uploadButton = $("<button id='undefined_wdv1_toolbar_Button_Upload' title='Upload File' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button  atala-upload-button' role='utton'>Upload File</button>");
+
+    uploadButton.click(ShowFileUpload);
+
+    uploadButton.button({
+        icons: { primary: "atala-ui-icon atala-ui-icon-upload" }, text: false
+    });
+    
+    return uploadButton;
+}
+
+function AddFileSaveButton() {
+
+	var saveButton = $("<button id='undefined_wdv1_toolbar_Button_SaveFile' title='Save Document' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button atala-save-document-button' role='button'>Save Document</button>");
+
+    saveButton.click(SaveFile);
+
+    saveButton.button({
+        icons: { primary: "atala-ui-icon atala-ui-icon-save-document" }, text: false
+    });
+    
+    return saveButton;
+}
+
+function ShowFileUpload() {
+    try {
+        $("#resultsText").html("<div>Upload a file to have it displayed in the viewer.</div><br /><div><input id='fileUpload' type='file' name='file' class='input'/></div>");
+
+        $("#results").dialog({
+            title: "File Upload",
+            minWidth: 500,
+            height: 300,
+            buttons: [{
+                text: "Submit",
+                id: "submitButton",
+                disabled: true,
+                click: function () { $(this).dialog("close"); }
+            }, {
+                text: "Cancel",
+                click: function () { $(this).dialog("close"); }
+            }],
+            resizable: true
+        });
+
+        var gif = $(".loadingGif");
+        var dim = $(".dimwrapper");
+        $("#fileUpload").fileupload({
+            replaceFileInput: false,
+            dataType: "json",
+            url:"Handlers/UploadHandler.ashx",
+            add: function (e, data) {
+                var btn = $("#submitButton");
+                btn.button("enable");
+                btn.button().click(function() {
+                    ShowLoadingGif(gif);
+                    data.submit();
+                });
+            },
+            done: function (e, data) {
+                dim.hide();
+                gif.hide();
+                if (data.result.success) {
+                    _docUrl = data.result.file;
+                    _thumbs.OpenUrl(_docUrl, "");
+
+                } else {
+                    ShowError();
+                }
+            },
+            error: function (data, status, e) {
+                dim.hide();
+                gif.hide();
+                alert(status + " " + data.error + " " + e);
+            }
+        });
+
+    } catch (e) {
+        alert(e);
+    }
+	
+	return false;
+}
+
+function ShowError(){
+
+        $("#resultsText").html("<div>We could not open your document.</div><br /><div>See our <a href='http://www.atalasoft.com/products/dotimage/feature-matrix' target='_blank'>feature matrix</a> for a complete list of supported file types.</div>");
         $("#results").dialog({
             title: "File Upload",
             minWidth: 500,
@@ -269,6 +328,38 @@ function ShowError(msg){
             }],
             resizable: true
         });
+}
+
+function ShowLoadingGif(gif) {
+
+    var viewer = $(".atala-document-viewer");
+    var pos = viewer.position();
+    var w = viewer.width();
+    var h = viewer.height();
+
+    var dim = $(".dimwrapper");
+    dim.show();
+    dim.css("left", (pos.left - 7));
+    dim.css("top", (pos.top + 1));
+    dim.css("height", h);
+    dim.css("width", w);
+    dim.css("background-color", "#424242");
+    dim.css("opacity", 0.75);
+
+    gif.show();
+    gif.css("left", ((pos.left + w / 2) - 55));
+    gif.css("top", ((pos.top + h / 2) - 55));
+    gif.css("height", h);
+    gif.css("width", w);
+}
+
+function SaveFile(){
+
+    _viewer.save(null, function() {
+        window.open("Handlers/ProcessingHandler.svc/MakePrintPdf?document=" + _docUrl + "&annotationFolder=" + _savePath); 
+    });
+
+    return false;
 }
 
 function AppendStatus(error){
