@@ -26,8 +26,6 @@ $(function() {
 
         SetupClickBar();
 
-        //AddFileToolbar();
-
     } //End Try
     catch (error) {
         console.log(error);
@@ -258,97 +256,6 @@ function SetViewerWidth(){
 
 }
 
-//function AddFileToolbar() {
-
-
-//    $("." + _viewer.domclasses.atala_toolbar).prepend(AddFileUploadButton());
-//}
-
-//function AddFileUploadButton() {
-
-//	var uploadButton = $("<button id='undefined_wdv1_toolbar_Button_Upload' title='Upload File' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button  atala-upload-button' role='utton'>Upload File</button>");
-
-//    uploadButton.click(ShowFileUpload);
-
-//    uploadButton.button({
-//        icons: { primary: "atala-ui-icon atala-ui-icon-upload" }, text: false
-//    });
-    
-//    return uploadButton;
-//}
-
-//function AddFileSaveButton() {
-
-//	var saveButton = $("<button id='undefined_wdv1_toolbar_Button_SaveFile' title='Save Document' class='ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only atala-ui-button atala-save-document-button' role='button'>Save Document</button>");
-
-//    saveButton.click(SaveFile);
-
-//    saveButton.button({
-//        icons: { primary: "atala-ui-icon atala-ui-icon-save-document" }, text: false
-//    });
-    
-//    return saveButton;
-//}
-
-//function ShowFileUpload() {
-//    try {
-//        $("#resultsText").html("<div>Upload a file to have it displayed in the viewer.</div><br /><div><input id='fileUpload' type='file' name='file' class='input'/></div>");
-
-//        $("#results").dialog({
-//            title: "File Upload",
-//            minWidth: 500,
-//            height: 300,
-//            buttons: [{
-//                text: "Submit",
-//                id: "submitButton",
-//                disabled: true,
-//                click: function () { $(this).dialog("close"); }
-//            }, {
-//                text: "Cancel",
-//                click: function () { $(this).dialog("close"); }
-//            }],
-//            resizable: true
-//        });
-
-//        var gif = $(".loadingGif");
-//        var dim = $(".dimwrapper");
-//        $("#fileUpload").fileupload({
-//            replaceFileInput: false,
-//            dataType: "json",
-//            url:"Handlers/UploadHandler.ashx",
-//            add: function (e, data) {
-//                var btn = $("#submitButton");
-//                btn.button("enable");
-//                btn.button().click(function() {
-//                    ShowLoadingGif(gif);
-//                    data.submit();
-//                });
-//            },
-//            done: function (e, data) {
-//                dim.hide();
-//                gif.hide();
-//                if (data.result.success) {
-//                    _docUrl = data.result.file;
-//                    _thumbs.OpenUrl(_docUrl, "");
-
-//                } else {
-//                    ShowError();
-//                }
-//            },
-//            error: function (data, status, e) {
-//                dim.hide();
-//                gif.hide();
-//                alert(status + " " + data.error + " " + e);
-//            }
-//        });
-
-//    } catch (e) {
-//        alert(e);
-//    }
-	
-//	return false;
-//}
-
 function ShowError(msg){
 
     $("#resultsText").html(msg);
@@ -363,38 +270,6 @@ function ShowError(msg){
             resizable: true
         });
 }
-
-//function ShowLoadingGif(gif) {
-
-//    var viewer = $(".atala-document-viewer");
-//    var pos = viewer.position();
-//    var w = viewer.width();
-//    var h = viewer.height();
-
-//    var dim = $(".dimwrapper");
-//    dim.show();
-//    dim.css("left", (pos.left - 7));
-//    dim.css("top", (pos.top + 1));
-//    dim.css("height", h);
-//    dim.css("width", w);
-//    dim.css("background-color", "#424242");
-//    dim.css("opacity", 0.75);
-
-//    gif.show();
-//    gif.css("left", ((pos.left + w / 2) - 55));
-//    gif.css("top", ((pos.top + h / 2) - 55));
-//    gif.css("height", h);
-//    gif.css("width", w);
-//}
-
-//function SaveFile(){
-
-//    _viewer.save(null, function() {
-//        window.open("Handlers/ProcessingHandler.svc/MakePrintPdf?document=" + _docUrl + "&annotationFolder=" + _savePath); 
-//    });
-
-//    return false;
-//}
 
 function AppendStatus(error){
     console.log(error);
