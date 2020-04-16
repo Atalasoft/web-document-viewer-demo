@@ -3,7 +3,6 @@ using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Web;
-using System.Web.Caching;
 using Atalasoft.Imaging.Codec;
 using Atalasoft.Imaging.Codec.CadCam;
 using Atalasoft.Imaging.Codec.Dicom;
@@ -19,11 +18,6 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
 {
     public class WebDocumentViewerHandler : WebDocumentRequestHandler
     {
-        private static CacheItemRemovedCallback _onCacheRemove;
-        private const int CacheMonitorInterval = 5;
-        public const string GuardFileName = "keep.me";
-        public const string CacheFolder = "WebViewingDemoResources/TempSession/";
-
         static WebDocumentViewerHandler()
         {
             Licensing.AtalaLicense.SetAssemblyLicense(System.Web.HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["AtalasoftLicenseString"]));
@@ -36,37 +30,6 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
             RegisteredDecoders.Decoders.Add(new Jp2Decoder());
             RegisteredDecoders.Decoders.Add(new DicomDecoder());
             RegisteredDecoders.Decoders.Add(new XpsDecoder());
-
-            // simple stub to monitor files both locally and on azure role.
-            StartCacheMonitor();
-        }
-
-        private static void StartCacheMonitor()
-        {
-            _onCacheRemove = ClearExpiredFiles;
-            HttpRuntime.Cache.Insert("atala_upload_cache", 0, null, DateTime.Now.AddHours(CacheMonitorInterval), Cache.NoSlidingExpiration, CacheItemPriority.NotRemovable, _onCacheRemove);
-
-        }
-
-        private static void ClearExpiredFiles(string key, object value, CacheItemRemovedReason reason)
-        {
-            foreach (var filePath in Directory.EnumerateFiles(Path.Combine(HttpRuntime.AppDomainAppPath, CacheFolder)))
-            {
-                try
-                {
-                    // Skip guard file
-                    if (Path.GetFileName(filePath).Equals(GuardFileName))
-                        continue;
-
-                    if (File.GetLastAccessTimeUtc(filePath) < DateTime.UtcNow.AddHours(-CacheMonitorInterval))
-                        File.Delete(filePath);
-                }
-                catch (Exception)
-                {
-                }
-            }
-
-            StartCacheMonitor();
         }
 
         /// <summary>
