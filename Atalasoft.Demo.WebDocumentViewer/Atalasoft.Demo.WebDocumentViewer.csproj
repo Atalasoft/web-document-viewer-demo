@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -33,6 +34,7 @@
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -136,12 +138,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-noscript.css" />
-    <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui-noscript.css" />
-    <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui.css" />
-    <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload.css" />
-    <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
-    <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -183,6 +179,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="key.snk" />
@@ -198,7 +195,6 @@
     <None Include="Properties\PublishProfiles\atalasoft-viewer-demo - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\atalaWebDocumentViewer.css" />
-    <Content Include="Scripts\atalaWebDocumentViewer.d.ts" />
     <Content Include="Scripts\atalaWebDocumentViewer.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -212,19 +208,6 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
-    <Content Include="Scripts\jquery.easing.1.3.js" />
-    <Content Include="Scripts\jQuery.FileUpload\cors\jquery.postmessage-transport.js" />
-    <Content Include="Scripts\jQuery.FileUpload\cors\jquery.xdr-transport.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-angular.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-audio.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-image.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-jquery-ui.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-process.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-ui.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-validate.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-video.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.iframe-transport.js" />
     <Content Include="Scripts\raphael-min.js" />
     <Content Include="Scripts\raphael.js" />
     <Content Include="Web.config">
@@ -237,23 +220,18 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebViewingDemoResources\left_small.png" />
-    <Content Include="WebViewingDemoResources\loading.gif" />
-    <Content Include="WebViewingDemoResources\open.png" />
     <Content Include="WebViewingDemoResources\right_small.png" />
     <Content Include="WebViewingDemoResources\Scripts\Demo.css" />
     <Content Include="WebViewingDemoResources\Scripts\Initialization.js" />
     <Content Include="WebViewingDemoResources\small_logo.png" />
-    <Content Include="WebViewingDemoResources\startup.pdf" />
     <Content Include="WebViewingDemoResources\TempSession\keep.me" />
+    <Content Include="WebViewingDemoResources\startup.pdf" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnotationConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Handlers\UploadHandler.ashx.cs">
-      <DependentUpon>UploadHandler.ashx</DependentUpon>
-    </Compile>
     <Compile Include="Handlers\WebDocumentViewerHandler.ashx.cs">
       <DependentUpon>WebDocumentViewerHandler.ashx</DependentUpon>
     </Compile>
@@ -264,8 +242,13 @@
     <Folder Include="WebViewingDemoResources\Saved\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Handlers\UploadHandler.ashx" />
     <Content Include="Handlers\WebDocumentViewerHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\atalaWebDocumentViewer.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -277,7 +260,26 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
