@@ -162,6 +162,8 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
     <Content Include="Content\themes\base\menu.css" />
     <Content Include="Content\themes\base\progressbar.css" />
     <Content Include="Content\themes\base\resizable.css" />
@@ -186,6 +188,10 @@
     <Content Include="Scripts\clipboard.min.js" />
     <Content Include="Scripts\images\atala-ui-icons-16.png" />
     <Content Include="Scripts\images\atala-ui-spinner.gif" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery.easing.1.3.js" />
     <Content Include="Scripts\jQuery.FileUpload\cors\jquery.postmessage-transport.js" />
     <Content Include="Scripts\jQuery.FileUpload\cors\jquery.xdr-transport.js" />
