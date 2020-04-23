@@ -186,6 +186,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\clipboard.min.js" />
+    <Content Include="Scripts\images\atala-ui-dragdropfile.png" />
     <Content Include="Scripts\images\atala-ui-icons-16.png" />
     <Content Include="Scripts\images\atala-ui-spinner.gif" />
     <Content Include="Scripts\jquery-3.5.0.js" />
