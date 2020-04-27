@@ -48,7 +48,7 @@ function InitializeViewers() {
             enabled: true,
             uploadpath: _uploadPath,
             allowedfiletypes: '.jpg,.pdf,.png,.jpeg,image/tiff,.dwg,.doc,.docx,.raw,.orf,.raf,.cr3,.crw,.jbig2,.xps',
-            allowedmaxfilesize: 1 * 1024 * 1024,
+            allowedmaxfilesize: 10 * 1024 * 1024,
             allowmultiplefiles: false,
             allowdragdrop: true,
         },
