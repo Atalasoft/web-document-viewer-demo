@@ -28,7 +28,7 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
         {
             Licensing.AtalaLicense.SetAssemblyLicense(System.Web.HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["AtalasoftLicenseString"]));
             
-            RegisteredDecoders.Decoders.Add(new PdfDecoder { Resolution = 200, RenderSettings = new RenderSettings { AnnotationSettings = AnnotationRenderSettings.None } });
+            RegisteredDecoders.Decoders.Add(new PdfDecoder { Resolution = 200, RenderSettings = new Imaging.Codec.Pdf.RenderSettings { AnnotationSettings = AnnotationRenderSettings.None } });
             RegisteredDecoders.Decoders.Add(new OfficeDecoder { Resolution = 200 });
             RegisteredDecoders.Decoders.Add(new RawDecoder());
             RegisteredDecoders.Decoders.Add(new DwgDecoder());
@@ -75,6 +75,7 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
         public WebDocumentViewerHandler()
         {
             PageTextRequested += OnPageTextRequested;
+            FileUpload += OnFileUpload;
         }
 
         private void OnPageTextRequested(object sender, PageTextRequestedEventArgs pageTextRequestedEventArgs)
@@ -110,6 +111,11 @@ namespace Atalasoft.Demo.WebDocumentViewer.Handlers
                     }
                 }
             }
+        }
+
+        private void OnFileUpload(object sender, FileUploadEventArgs e)
+        {
+            e.Cancel = false;
         }
     }
 }

@@ -1,13 +1,13 @@
 //-------------------------------------------------------------------------------------------------
 //
 //  Type definition file for Atalasoft Web Document Viewer. 
-//  Copyright 2003-2020 Atalasoft, Inc. All Rights Reserved.
+//  (C) 2003-2023 Kofax. All Rights Reserved.
 //
 //  This source code is property of Atalasoft, Inc. (http://www.atalasoft.com/)
 //  Permission for usage and modification of this code is only permitted 
 //  with the purchase of a source code license.
 //-------------------------------------------------------------------------------------------------
-// Version 11,2,0,303
+// Version 11,4,0,446
 
 export as namespace Atalasoft;
 interface NotificationCallback {
@@ -56,6 +56,14 @@ interface TextSearchResult{
 interface DocumentPageReference{
     uri:  string;
     index:  number;
+}
+
+interface BookmarkData{
+    id: number;
+    Page: number;
+    Top: number;
+    Text: string;
+    Children: BookmarkData[];
 }
 
 interface DocumentInfo{
@@ -414,8 +422,33 @@ export namespace Controls {
          * @param callback Function to execute when the operation has completed.
          */
         public rotatePages(indices: number[]|string[], angles: number|number[]|string[], callback?: NotificationCallback): void;
-        //#endregion
+        
+        /**
+        * Gets all bookmarks for PDF document.
+        */
+        public getBookmarks(): BookmarkData[];
 
+        /**
+        * Gets an array of child bookmarks relative to specified.
+        * @param {BookmarkData} bookmark - the bookmark object for which children are searched.
+        */
+        public getChildBookmarks(bookmark: BookmarkData): BookmarkData[];
+
+        /**
+        * Scrolls viewer to the specified bookmark.
+        * @param {BookmarkData} bookmark - the bookmark object to scroll to.
+        * @param {NotificationCallback} [callback] - Function to be called when the operation has completed.
+        */
+        public scrollToBookmark(bookmark: BookmarkData, callback?: NotificationCallback): void;
+
+            
+        /**
+        * Removes whole information about the bookmarks from PDF document.
+        * @param {NotificationCallback} [callback] - Function to be called when the operation has completed.
+        */
+        public removeAllBookmarks(callback?: NotificationCallback): void;
+        
+        //#endregion
     }
    
     /**
@@ -554,13 +587,14 @@ export namespace Controls {
         forcepagefit?: boolean;
         formurl?: string;
         jpeg?: boolean;
-        localization: Utils.LocalizationStrings;
+        localization?: Utils.LocalizationStrings;
         maxwidth?: number;
         memorythreshold?: number;
         minwidth?: number;
         mousetool?: MouseToolConfig | Utils.MouseToolType;
         pageborderwidth?: number;
         pagebuffersize?: number;
+        maxpagebuffersize?: number;
         pageselectlocation?: Utils.PageSelection;
         pagespacing?: number;
         allowflick?: boolean;
@@ -568,6 +602,8 @@ export namespace Controls {
         savefileformat?: string;
         savepath?: string;
         scripturl?: string;
+        savepreviouslysigneddocument?: boolean;
+        showbookmarks?: boolean;
         showbuttontext?: boolean;
         showerrors?: boolean;
         showpageborder?: boolean;
@@ -579,6 +615,7 @@ export namespace Controls {
         showstatus?: boolean;
         singlepage?: boolean;
         tabular?: boolean;
+        tiling?: boolean;
         toolbarbuttons?: ToolbarButtonConfig[];
         toolbarparent?: Record<string, any>;
         upload?: FileUploadConfig;
@@ -605,13 +642,45 @@ export namespace Controls {
 
 
     export interface AnnotationsConfig{
-        defaults?: AnnotationData[];
-        stamps?: AnnotationData[];
-        images?: AnnotationData[];
+        defaults?: AnnotationDataConfig[];
+        stamps?: AnnotationDataConfig[];
+        images?: AnnotationDataConfig[];
         saveusername?: boolean;
     }
+
+    export class AnnotationData {
+        public constructor(config: AnnotationDataConfig)
+        // Methods
+        public update(): void;
+        public getPageIndex(): number;
+        // Properties
+        public name: string;
+        public type: Annotations.AnnotationTypes;
+        public rotation?: number;
+        public burn?: boolean;
+        public extra?: Record<string, any>;
+        public fill?: AnnotationFill;
+        public height?: number;
+        public movable?: boolean;
+        public outline?: AnnotationOutline;
+        public points?: Point[];
+        public readonly?: boolean;
+        public resizable?: boolean;
+        public rotatable?: boolean;
+        public cornerradius?: number;
+        public selectable?: boolean;
+        public selected?: boolean;
+        public src?: string;
+        public text?: AnnotationTextConfig;
+        public tooltip?: string;
+        public username?: string;
+        public visible?: boolean;
+        public width?: number;
+        public x?: number;
+        public y?: number;
+    }
     
-    export interface AnnotationData{
+    export interface AnnotationDataConfig{
         name: string;
         type: Annotations.AnnotationTypes;
         rotation?: number;
@@ -636,8 +705,6 @@ export namespace Controls {
         width?: number;
         x?: number;
         y?: number;
-        getPageIndex(): number;
-        update(): void;
     }
 
     export class WebDocumentViewer {
@@ -1115,6 +1182,11 @@ export namespace Controls {
     }
     interface AnnotationTextChangedEvent{
         annotation: AnnotationData;
+    }
+
+    interface AnnotationChangedEvent{
+        annotation: AnnotationData;
+        annobefore: AnnotationData;
     }
 
     interface AnnotationsLoadedEvent{
