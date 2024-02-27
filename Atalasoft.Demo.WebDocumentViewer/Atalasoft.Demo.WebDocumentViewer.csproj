@@ -129,9 +129,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\ISYS11df.dll" />
-    <Content Include="bin\ISYSreaders.dll" />
-    <Content Include="bin\ISYSreadershd.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
