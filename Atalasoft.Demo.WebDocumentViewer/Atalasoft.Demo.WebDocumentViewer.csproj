@@ -80,9 +80,6 @@
     <Reference Include="Atalasoft.dotImage.Ocr, Version=11.4.0.458, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
       <HintPath>..\packages\Atalasoft.dotImage.Ocr.x86.11.4.0.14458\lib\net452\Atalasoft.dotImage.Ocr.dll</HintPath>
     </Reference>
-    <Reference Include="Atalasoft.dotImage.Office, Version=11.4.0.458, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.4.0.14458\lib\net452\Atalasoft.dotImage.Office.dll</HintPath>
-    </Reference>
     <Reference Include="Atalasoft.dotImage.Pdf, Version=11.4.0.458, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
       <HintPath>..\packages\Atalasoft.dotImage.Pdf.x86.11.4.0.14458\lib\net452\Atalasoft.dotImage.Pdf.dll</HintPath>
     </Reference>
@@ -110,9 +107,6 @@
     <Reference Include="Atalasoft.Shared, Version=11.4.0.458, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
       <HintPath>..\packages\Atalasoft.Shared.11.4.0.14458\lib\net452\Atalasoft.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="Perceptive.DocumentFilters, Version=22.1.0.4255, Culture=neutral, PublicKeyToken=ef6160c802066cff, processorArchitecture=MSIL">
-      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.4.0.14458\lib\net452\Perceptive.DocumentFilters.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -129,9 +123,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\ISYS11df.dll" />
-    <Content Include="bin\ISYSreaders.dll" />
-    <Content Include="bin\ISYSreadershd.dll" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -277,7 +268,6 @@
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Jbig2.x86.11.4.0.14458\build\Atalasoft.dotImage.Jbig2.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Jbig2.x86.11.4.0.14458\build\Atalasoft.dotImage.Jbig2.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.4.0.14458\build\Atalasoft.dotImage.Jpeg2000.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.4.0.14458\build\Atalasoft.dotImage.Jpeg2000.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.PdfReader.x86.11.4.0.14458\build\Atalasoft.dotImage.PdfReader.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.PdfReader.x86.11.4.0.14458\build\Atalasoft.dotImage.PdfReader.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Office.x86.11.4.0.14458\build\Atalasoft.dotImage.Office.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Office.x86.11.4.0.14458\build\Atalasoft.dotImage.Office.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Raw.x86.11.4.0.14458\build\Atalasoft.dotImage.Raw.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Raw.x86.11.4.0.14458\build\Atalasoft.dotImage.Raw.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Atalasoft.PdfDoc.x86.11.4.0.14458\build\Atalasoft.PdfDoc.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.PdfDoc.x86.11.4.0.14458\build\Atalasoft.PdfDoc.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Ocr.x86.11.4.0.14458\build\Atalasoft.dotImage.Ocr.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Ocr.x86.11.4.0.14458\build\Atalasoft.dotImage.Ocr.x86.targets'))" />
@@ -294,7 +284,6 @@
   <Import Project="..\packages\Atalasoft.dotImage.Jbig2.x86.11.4.0.14458\build\Atalasoft.dotImage.Jbig2.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Jbig2.x86.11.4.0.14458\build\Atalasoft.dotImage.Jbig2.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.4.0.14458\build\Atalasoft.dotImage.Jpeg2000.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Jpeg2000.x86.11.4.0.14458\build\Atalasoft.dotImage.Jpeg2000.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.PdfReader.x86.11.4.0.14458\build\Atalasoft.dotImage.PdfReader.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.PdfReader.x86.11.4.0.14458\build\Atalasoft.dotImage.PdfReader.x86.targets')" />
-  <Import Project="..\packages\Atalasoft.dotImage.Office.x86.11.4.0.14458\build\Atalasoft.dotImage.Office.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Office.x86.11.4.0.14458\build\Atalasoft.dotImage.Office.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.Raw.x86.11.4.0.14458\build\Atalasoft.dotImage.Raw.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Raw.x86.11.4.0.14458\build\Atalasoft.dotImage.Raw.x86.targets')" />
   <Import Project="..\packages\Atalasoft.PdfDoc.x86.11.4.0.14458\build\Atalasoft.PdfDoc.x86.targets" Condition="Exists('..\packages\Atalasoft.PdfDoc.x86.11.4.0.14458\build\Atalasoft.PdfDoc.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.Ocr.x86.11.4.0.14458\build\Atalasoft.dotImage.Ocr.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Ocr.x86.11.4.0.14458\build\Atalasoft.dotImage.Ocr.x86.targets')" />
